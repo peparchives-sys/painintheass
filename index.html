@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pain in the Ass — A film by Paul-Alexander Pissarro</title>
+  <meta name="description" content="A luxury car commercial cast entirely with disabled actors, shot in Hamburg. The behind-the-scenes documentary is the actual film.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Pain in the Ass.">
+  <meta property="og:description" content="The story is the work that made it.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://painintheass.info">
+  <!-- <meta property="og:image" content="https://painintheass.info/og.jpg"> add when ready -->
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pain in the Ass.">
+  <meta name="twitter:description" content="The story is the work that made it.">
+
+  <!-- Inline SVG favicon: yellow square -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23C49A3A'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
+
+  <!-- JS-enabled flag set before stylesheet applies, so the reveal styles only hide content when JS is actually running -->
+  <script>document.documentElement.classList.add('js')</script>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --white: #FFFFFF;
+      --paper: #FBFAF7;
+      --ink: #1F1F1F;
+      --text: #2A2A2A;
+      --muted: #6B6B6B;
+      --faint: #A8A8A8;
+      --hairline: #E8E8E8;
+      --accent: #C49A3A;
+      --accent-soft: #E6CC8A;
+
+      --serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+
+      --max-w: 1240px;
+    }
+
+    html {
+      font-family: var(--serif);
+      color: var(--text);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+
+    body {
+      font-family: var(--serif);
+      font-weight: 400;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--white);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    ::selection {
+      background: var(--accent-soft);
+      color: var(--ink);
+    }
+
+    /* ===== Header ===== */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 1.5rem 2rem;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: saturate(180%) blur(10px);
+      -webkit-backdrop-filter: saturate(180%) blur(10px);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s ease;
+    }
+
+    .site-header.is-scrolled {
+      border-bottom-color: var(--hairline);
+    }
+
+    .site-header__inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .mark {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .mark__square {
+      width: 10px;
+      height: 10px;
+      background: var(--accent);
+      display: inline-block;
+      flex-shrink: 0;
+    }
+
+    .mark__name {
+      font-size: 0.72rem;
+      letter-spacing: 0.26em;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .header__meta {
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      color: var(--faint);
+      font-style: italic;
+      text-transform: lowercase;
+    }
+
+    /* ===== Hero ===== */
+    .hero {
+      min-height: 100vh;
+      min-height: 100svh; /* modern Safari, avoids URL bar jump */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 8rem 2rem 6rem;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .hero__kicker {
+      font-size: 0.78rem;
+      letter-spacing: 0.28em;
+      color: var(--accent);
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 2.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .hero__kicker::before {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: var(--accent);
+    }
+
+    .hero__title {
+      font-size: clamp(3rem, 13vw, 10rem);
+      line-height: 0.95;
+      font-style: italic;
+      font-weight: 500;
+      color: var(--ink);
+      letter-spacing: -0.025em;
+      margin-bottom: 3rem;
+    }
+
+    .hero__quote {
+      font-size: clamp(1.35rem, 3.4vw, 2.4rem);
+      line-height: 1.3;
+      color: var(--ink);
+      max-width: 22em;
+      font-weight: 400;
+      font-style: italic;
+      margin-bottom: 3rem;
+    }
+
+    .hero__byline {
+      font-size: 0.95rem;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+    }
+
+    .hero__byline strong {
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    .hero__scroll {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 2rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      color: var(--faint);
+      text-transform: uppercase;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Hero entrance animations — only when JS is on and motion is welcome */
+    @media (prefers-reduced-motion: no-preference) {
+      .js .hero__kicker,
+      .js .hero__title,
+      .js .hero__quote,
+      .js .hero__byline,
+      .js .hero__scroll {
+        opacity: 0;
+        animation: fadeUp 1s ease forwards;
+      }
+      .js .hero__kicker { animation-delay: 0.2s; }
+      .js .hero__title  { animation-delay: 0.4s; animation-duration: 1.1s; }
+      .js .hero__quote  { animation-delay: 0.75s; animation-duration: 1.1s; }
+      .js .hero__byline { animation-delay: 1.1s; animation-duration: 1.1s; }
+      .js .hero__scroll { animation-delay: 1.5s; animation-duration: 1.5s; }
+    }
+
+    /* ===== Section base ===== */
+    section.content {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 8rem 2rem;
+    }
+
+    .section__label {
+      font-size: 0.72rem;
+      letter-spacing: 0.28em;
+      color: var(--accent);
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 2.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .section__label::before {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: var(--accent);
+    }
+
+    .section__title {
+      font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.05;
+      letter-spacing: -0.015em;
+      margin-bottom: 2.5rem;
+      font-style: italic;
+    }
+
+    /* ===== Story ===== */
+    .story__pullquote {
+      font-style: italic;
+      font-size: clamp(1.9rem, 4.5vw, 3.25rem);
+      line-height: 1.2;
+      color: var(--ink);
+      margin: 0 0 3.5rem;
+      max-width: 22em;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+    }
+
+    .story__body {
+      font-size: 1.2rem;
+      line-height: 1.65;
+      max-width: 38em;
+      color: var(--text);
+    }
+
+    .story__body p {
+      margin-bottom: 1.4em;
+    }
+
+    .story__body p.emphasis {
+      font-weight: 600;
+      color: var(--ink);
+      font-style: italic;
+      font-size: 1.3rem;
+    }
+
+    /* ===== Work ===== */
+    .work {
+      background: var(--paper);
+      border-top: 1px solid var(--hairline);
+      border-bottom: 1px solid var(--hairline);
+    }
+
+    .work__inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 8rem 2rem;
+    }
+
+    .work__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      margin-top: 4rem;
+    }
+
+    .work__card-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.28em;
+      color: var(--accent);
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .work__card-title {
+      font-family: var(--serif);
+      font-size: 1.9rem;
+      font-style: italic;
+      color: var(--ink);
+      margin-bottom: 1.25rem;
+      font-weight: 500;
+    }
+
+    .work__card-body {
+      font-size: 1.05rem;
+      line-height: 1.65;
+      color: var(--text);
+    }
+
+    /* ===== Notify ===== */
+    .notify {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 9rem 2rem;
+      text-align: center;
+    }
+
+    .notify__title {
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-style: italic;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.015em;
+    }
+
+    .notify__sub {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 32em;
+      margin: 0 auto 3rem;
+      line-height: 1.55;
+    }
+
+    .form {
+      display: flex;
+      max-width: 36rem;
+      margin: 0 auto;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .form__input {
+      flex: 1;
+      min-width: 16rem;
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      padding: 1rem 1.25rem;
+      border: 1px solid var(--hairline);
+      background: var(--white);
+      color: var(--ink);
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    .form__input:focus {
+      border-color: var(--ink);
+    }
+
+    .form__input::placeholder {
+      color: var(--faint);
+      font-style: italic;
+    }
+
+    .form__button {
+      font-family: var(--serif);
+      font-size: 0.8rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      padding: 1rem 1.75rem;
+      background: var(--ink);
+      color: var(--white);
+      border: 1px solid var(--ink);
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .form__button:hover {
+      background: var(--accent);
+      color: var(--ink);
+      border-color: var(--accent);
+    }
+
+    .form__button:active {
+      transform: scale(0.98);
+    }
+
+    .form__input:focus-visible {
+      border-color: var(--ink);
+      outline: 2px solid var(--accent-soft);
+      outline-offset: 2px;
+    }
+
+    .form__note {
+      font-size: 0.85rem;
+      color: var(--faint);
+      font-style: italic;
+      margin-top: 2rem;
+    }
+
+    .form__success {
+      display: none;
+      font-style: italic;
+      font-size: 1.2rem;
+      color: var(--ink);
+      max-width: 30em;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+
+    .form.is-success .form__success {
+      display: block;
+    }
+
+    .form.is-success .form__input,
+    .form.is-success .form__button {
+      display: none;
+    }
+
+    /* ===== Footer ===== */
+    .footer {
+      border-top: 1px solid var(--hairline);
+      padding: 4rem 2rem 3rem;
+      background: var(--white);
+    }
+
+    .footer__inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer__group {
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .footer__group p {
+      margin: 0;
+    }
+
+    .footer__group strong {
+      color: var(--ink);
+      font-weight: 600;
+      display: block;
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer__group a {
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .footer__group a:hover {
+      color: var(--ink);
+      border-bottom-color: var(--accent);
+    }
+
+    .footer__base {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding-top: 2rem;
+      border-top: 1px solid var(--hairline);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer__legal {
+      font-size: 0.75rem;
+      color: var(--faint);
+      letter-spacing: 0.05em;
+    }
+
+    .footer__legal span {
+      color: var(--accent);
+    }
+
+    /* ===== Reveal on scroll (JS + motion only) ===== */
+    @media (prefers-reduced-motion: no-preference) {
+      .js .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition: opacity 1.1s cubic-bezier(0.22, 0.61, 0.36, 1), transform 1.1s cubic-bezier(0.22, 0.61, 0.36, 1);
+      }
+
+      .js .reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 860px) {
+      .work__grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .footer__inner {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        padding: 6rem 1.25rem 4rem;
+      }
+
+      .hero__kicker {
+        letter-spacing: 0.22em;
+        font-size: 0.72rem;
+        margin-bottom: 2rem;
+      }
+
+      section.content,
+      .work__inner {
+        padding: 5rem 1.25rem;
+      }
+
+      .notify {
+        padding: 5rem 1.25rem;
+      }
+
+      .site-header {
+        padding: 1rem 1.25rem;
+      }
+
+      .footer {
+        padding: 3rem 1.25rem 2rem;
+      }
+
+      .hero__scroll {
+        left: 1.25rem;
+        bottom: 1.5rem;
+      }
+
+      .form {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .form__input,
+      .form__button {
+        width: 100%;
+        min-width: 0;
+      }
+
+      .footer__base {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .work__card-title,
+      .notify__title {
+        font-size: 1.7rem;
+      }
+    }
+
+    /* Very narrow phones */
+    @media (max-width: 400px) {
+      .hero {
+        padding: 5.5rem 1.1rem 3rem;
+      }
+
+      .hero__kicker {
+        letter-spacing: 0.16em;
+        font-size: 0.66rem;
+        gap: 0.5rem;
+        align-items: flex-start;
+      }
+
+      .hero__kicker::before {
+        width: 7px;
+        height: 7px;
+        margin-top: 0.35em;
+        flex-shrink: 0;
+      }
+
+      .mark__name {
+        font-size: 0.66rem;
+        letter-spacing: 0.22em;
+      }
+
+      .header__meta {
+        font-size: 0.62rem;
+        letter-spacing: 0.18em;
+      }
+
+      section.content,
+      .work__inner,
+      .notify {
+        padding: 4rem 1.1rem;
+      }
+
+      .story__body {
+        font-size: 1.05rem;
+      }
+
+      .story__body p.emphasis {
+        font-size: 1.15rem;
+      }
+
+      .work__card-body {
+        font-size: 1rem;
+      }
+
+      .notify__sub {
+        font-size: 1rem;
+      }
+    }
+
+    /* Short landscape — keep scroll cue out of the way */
+    @media (max-height: 600px) {
+      .hero__scroll {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 5rem;
+        padding-bottom: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header" id="site-header">
+    <div class="site-header__inner">
+      <a class="mark" href="/" aria-label="Pain in the Ass home">
+        <span class="mark__square" aria-hidden="true"></span>
+        <span class="mark__name">PAIN IN THE ASS</span>
+      </a>
+      <span class="header__meta">in production</span>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero__kicker">A film by Paul&#8209;Alexander Pissarro</div>
+    <h1 class="hero__title">Pain in the Ass.</h1>
+    <p class="hero__quote">Superman is Clark Kent the whole time.</p>
+    <p class="hero__byline">Shot in <strong>Hamburg</strong>. Coming this year.</p>
+    <div class="hero__scroll">Read on ↓</div>
+  </section>
+
+  <section class="content reveal">
+    <div class="section__label">The story</div>
+    <p class="story__pullquote">It is a pain in the ass to be disabled. Period.</p>
+    <div class="story__body">
+      <p>The Superman everyone has agreed to call Clark Kent because it is easier. The Superman the city was not built for. The bricks were laid for someone else. The doors were sized for someone else. The sentences were written about someone else.</p>
+      <p>This is a film about that, but it is not a film that explains it. It is a luxury car commercial cast entirely with disabled actors, shot in Hamburg, in which the behind-the-scenes documentary is the actual film. The commercial is its trojan horse.</p>
+      <p class="emphasis">The story is the work that made it.</p>
+    </div>
+  </section>
+
+  <section class="work reveal">
+    <div class="work__inner">
+      <div class="section__label">The work</div>
+      <h2 class="section__title">A film, and the film<br>that made it.</h2>
+      <div class="work__grid">
+        <div>
+          <div class="work__card-label">The spot</div>
+          <h3 class="work__card-title">Forty-five seconds.</h3>
+          <p class="work__card-body">Vintage Porsche, Alfa, BMW, Mercedes. Speicherstadt, the Kunsthalle, the Fontenay, the Schauspielhaus. First class on Delta from JFK. Six to eight cast members move through Hamburg as luxury subjects. The frame makes no reference to disability. It ends with a tag that reframes everything inside it.</p>
+        </div>
+        <div>
+          <div class="work__card-label">The documentary</div>
+          <h3 class="work__card-title">Seventy-five minutes.</h3>
+          <p class="work__card-body">What the spot took. The permits, the accommodations the production had to invent, the wins, the fights, the fatigue, the hostility met on real Hamburg streets, the internal critiques, the fun. The actual film. The spot is the lure.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="notify reveal">
+    <h2 class="notify__title">Be the first to see it.</h2>
+    <p class="notify__sub">One email when the work is out. No spam, no second message, no list-sharing. A single note when there is something to see.</p>
+
+    <form class="form" id="notify-form"
+          action="https://formsubmit.co/ajax/hello@painintheass.info"
+          method="POST">
+      <!--
+        This form uses FormSubmit (https://formsubmit.co), which delivers submissions
+        straight to hello@painintheass.info with no signup, no API key, no backend.
+
+        FIRST-TIME SETUP:
+        1. After deploying, submit one test entry from this page.
+        2. FormSubmit will send a confirmation email to hello@painintheass.info.
+        3. Click "Activate" in that email. Future submissions will then deliver.
+        4. (Optional, recommended) The activation email includes a hashed endpoint
+           that hides your address from public HTML. Swap "hello@painintheass.info"
+           in the action URL for that hash to prevent address scraping.
+      -->
+      <input class="form__input" type="email" name="email"
+             placeholder="your email address"
+             required
+             aria-label="Email address"
+             autocomplete="email"
+             autocapitalize="off"
+             autocorrect="off"
+             spellcheck="false"
+             inputmode="email">
+      <input type="hidden" name="_subject" value="New signup: painintheass.info">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="form__button" type="submit">Notify me</button>
+      <p class="form__success">Thank you. We will be in touch when the work is out.</p>
+    </form>
+
+    <p class="form__note">Production now. Premiere later this year.</p>
+  </section>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__group">
+        <strong>The film</strong>
+        <p>A film by Paul&#8209;Alexander Pissarro.</p>
+        <p>Shot in Hamburg.</p>
+      </div>
+      <div class="footer__group">
+        <strong>Production</strong>
+        <p>Unsubscribe LLC.</p>
+        <p>Hamburg / New York.</p>
+        <p>Charitable partner to be announced.</p>
+      </div>
+      <div class="footer__group">
+        <strong>Press &amp; inquiries</strong>
+        <p><a href="mailto:hello@painintheass.info">hello@painintheass.info</a></p>
+      </div>
+    </div>
+    <div class="footer__base">
+      <p class="footer__legal">© 2025 Unsubscribe LLC. All rights reserved.</p>
+      <p class="footer__legal"><span>■</span> painintheass.info</p>
+    </div>
+  </footer>
+
+  <script>
+    // Header scroll state
+    const header = document.getElementById('site-header');
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        header.classList.add('is-scrolled');
+      } else {
+        header.classList.remove('is-scrolled');
+      }
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    // Scroll-triggered reveals (skipped if reduced motion preferred)
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!prefersReducedMotion) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0, rootMargin: '0px 0px -10% 0px' });
+
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    } else {
+      // Reveal everything immediately for users who prefer no motion
+      document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
+    }
+
+    // Form submission via FormSubmit AJAX (with graceful fallback)
+    const form = document.getElementById('notify-form');
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
+        try {
+          const response = await fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+          });
+          if (response.ok) {
+            form.classList.add('is-success');
+          } else {
+            form.submit();
+          }
+        } catch (err) {
+          form.submit();
+        }
+      });
+    }
+  </script>
+</body>
+</html>
